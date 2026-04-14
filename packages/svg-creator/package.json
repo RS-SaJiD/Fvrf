@@ -1,0 +1,8 @@
+{
+  "name": "@snake/svg-creator",
+  "version": "1.0.0",
+  "dependencies": {
+    "@snake/types": "1.0.0",
+    "@snake/solver": "1.0.0"
+  }
+}
