@@ -1,8 +1,8 @@
 import { expect, it } from "bun:test";
-import { getBestRoute } from "@snk/solver/getBestRoute";
-import * as grids from "@snk/types/__fixtures__/grid";
-import { snake3 as snake } from "@snk/types/__fixtures__/snake";
-import { createSnakeFromCells, nextSnake } from "@snk/types/snake";
+import { getBestRoute } from "@snake/solver/getBestRoute";
+import * as grids from "@snake/types/__fixtures__/grid";
+import { snake3 as snake } from "@snake/types/__fixtures__/snake";
+import { createSnakeFromCells, nextSnake } from "@snake/types/snake";
 import * as fs from "fs";
 import * as path from "path";
 import { basePalettes } from "../../action/palettes";

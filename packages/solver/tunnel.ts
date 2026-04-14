@@ -1,8 +1,8 @@
-import { getColor, isEmpty, isInside } from "@snk/types/grid";
-import { getHeadX, getHeadY, nextSnake } from "@snk/types/snake";
-import type { Snake } from "@snk/types/snake";
-import type { Grid } from "@snk/types/grid";
-import type { Point } from "@snk/types/point";
+import { getColor, isEmpty, isInside } from "@snake/types/grid";
+import { getHeadX, getHeadY, nextSnake } from "@snake/types/snake";
+import type { Snake } from "@snake/types/snake";
+import type { Grid } from "@snake/types/grid";
+import type { Point } from "@snake/types/point";
 
 /**
  * get the sequence of snake to cross the tunnel

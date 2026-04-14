@@ -6,17 +6,17 @@ import {
   type Options as DrawOptions,
   drawLerpWorld,
   getCanvasWorldSize,
-} from "@snk/draw/drawWorld";
-import { step } from "@snk/solver/step";
-import { Color, copyGrid, Grid } from "@snk/types/grid";
-import type { Point } from "@snk/types/point";
-import { Snake } from "@snk/types/snake";
+} from "@snake/draw/drawWorld";
+import { step } from "@snake/solver/step";
+import { Color, copyGrid, Grid } from "@snake/types/grid";
+import type { Point } from "@snake/types/point";
+import { Snake } from "@snake/types/snake";
 import { createCanvas } from "canvas";
 // @ts-ignore
 import GIFEncoder from "gif-encoder-2";
 import gifsicle from "gifsicle";
 
-export type { Options as DrawOptions } from "@snk/draw/drawWorld";
+export type { Options as DrawOptions } from "@snake/draw/drawWorld";
 
 export type AnimationOptions = { stepDurationMs: number; frameByStep: number };
 

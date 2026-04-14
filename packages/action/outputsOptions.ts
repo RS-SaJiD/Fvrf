@@ -1,6 +1,6 @@
-import type { AnimationOptions } from "@snk/gif-creator";
-import type { DrawOptions as DrawOptionsSvg } from "@snk/svg-creator";
-import type { DrawOptions as DrawOptionsGif } from "@snk/gif-creator";
+import type { AnimationOptions } from "@snake/gif-creator";
+import type { DrawOptions as DrawOptionsSvg } from "@snake/svg-creator";
+import type { DrawOptions as DrawOptionsGif } from "@snake/gif-creator";
 import { palettes } from "./palettes";
 
 type DrawOptions = DrawOptionsSvg & DrawOptionsGif;

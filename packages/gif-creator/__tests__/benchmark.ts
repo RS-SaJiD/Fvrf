@@ -1,14 +1,14 @@
 import * as fs from "fs";
 import { performance } from "perf_hooks";
-import { createSnakeFromCells } from "@snk/types/snake";
-import { realistic as grid } from "@snk/types/__fixtures__/grid";
+import { createSnakeFromCells } from "@snake/types/snake";
+import { realistic as grid } from "@snake/types/__fixtures__/grid";
 import {
   type AnimationOptions,
   type DrawOptions,
   createGif as createGif_gifencore_gifslice,
 } from "..";
-import { getBestRoute } from "@snk/solver/getBestRoute";
-import { getPathToPose } from "@snk/solver/getPathToPose";
+import { getBestRoute } from "@snake/solver/getBestRoute";
+import { getPathToPose } from "@snake/solver/getPathToPose";
 import {
   canvasDrawNoOutput,
   createGif_ffmpeg,

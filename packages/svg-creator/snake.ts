@@ -1,6 +1,6 @@
-import { getSnakeLength, snakeToCells } from "@snk/types/snake";
-import type { Snake } from "@snk/types/snake";
-import type { Point } from "@snk/types/point";
+import { getSnakeLength, snakeToCells } from "@snake/types/snake";
+import type { Snake } from "@snake/types/snake";
+import type { Point } from "@snake/types/point";
 import { h } from "./xml-utils";
 import { createAnimation } from "./css-utils";
 

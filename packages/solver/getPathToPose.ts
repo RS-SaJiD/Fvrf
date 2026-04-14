@@ -6,17 +6,17 @@ import {
   snakeEquals,
   snakeToCells,
   snakeWillSelfCollide,
-} from "@snk/types/snake";
-import type { Snake } from "@snk/types/snake";
+} from "@snake/types/snake";
+import type { Snake } from "@snake/types/snake";
 import {
   getColor,
   Grid,
   isEmpty,
   isInside,
   isInsideLarge,
-} from "@snk/types/grid";
+} from "@snake/types/grid";
 import { getTunnelPath } from "./tunnel";
-import { around4 } from "@snk/types/point";
+import { around4 } from "@snake/types/point";
 import { sortPush } from "./utils/sortPush";
 
 const isEmptySafe = (grid: Grid, x: number, y: number) =>

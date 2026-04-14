@@ -2,21 +2,21 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync, execSync } from "node:child_process";
 import { Canvas, createCanvas } from "canvas";
-import { Grid, copyGrid, Color } from "@snk/types/grid";
-import { Snake } from "@snk/types/snake";
+import { Grid, copyGrid, Color } from "@snake/types/grid";
+import { Snake } from "@snake/types/snake";
 import {
   type Options as DrawOptions,
   drawLerpWorld,
   getCanvasWorldSize,
-} from "@snk/draw/drawWorld";
-import type { Point } from "@snk/types/point";
-import { step } from "@snk/solver/step";
+} from "@snake/draw/drawWorld";
+import type { Point } from "@snake/types/point";
+import { step } from "@snake/solver/step";
 import gifsicle from "gifsicle";
 // @ts-ignore
 import GIFEncoder from "gif-encoder-2";
 import { withTmpDir } from "..";
 
-export type { Options as DrawOptions } from "@snk/draw/drawWorld";
+export type { Options as DrawOptions } from "@snake/draw/drawWorld";
 
 export type AnimationOptions = { stepDurationMs: number; frameByStep: number };
 

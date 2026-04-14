@@ -1,10 +1,10 @@
-import { getGithubUserContribution } from "@snk/github-user-contribution";
+import { getGithubUserContribution } from "@snake/github-user-contribution";
 import { userContributionToGrid } from "./userContributionToGrid";
-import { getBestRoute } from "@snk/solver/getBestRoute";
-import { snake4 } from "@snk/types/__fixtures__/snake";
-import { getPathToPose } from "@snk/solver/getPathToPose";
-import type { DrawOptions as DrawOptions } from "@snk/svg-creator";
-import type { AnimationOptions } from "@snk/gif-creator";
+import { getBestRoute } from "@snake/solver/getBestRoute";
+import { snake4 } from "@snake/types/__fixtures__/snake";
+import { getPathToPose } from "@snake/solver/getPathToPose";
+import type { DrawOptions as DrawOptions } from "@snake/svg-creator";
+import type { AnimationOptions } from "@snake/gif-creator";
 
 export const generateContributionSnake = async (
   userName: string,
@@ -32,12 +32,12 @@ export const generateContributionSnake = async (
       switch (format) {
         case "svg": {
           console.log(`🖌 creating svg (outputs[${i}])`);
-          const { createSvg } = await import("@snk/svg-creator");
+          const { createSvg } = await import("@snake/svg-creator");
           return createSvg(grid, cells, chain, drawOptions, animationOptions);
         }
         case "gif": {
           console.log(`📹 creating gif (outputs[${i}])`);
-          const { createGif } = await import("@snk/gif-creator");
+          const { createGif } = await import("@snake/gif-creator");
           return await createGif(
             grid,
             cells,

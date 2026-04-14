@@ -4,15 +4,15 @@ import {
   isEmpty,
   isInside,
   setColorEmpty,
-} from "@snk/types/grid";
-import { getHeadX, getHeadY, getSnakeLength } from "@snk/types/snake";
+} from "@snake/types/grid";
+import { getHeadX, getHeadY, getSnakeLength } from "@snake/types/snake";
 import { getBestTunnel } from "./getBestTunnel";
 import { fillOutside, Outside } from "./outside";
 import { getTunnelPath } from "./tunnel";
 import { getPathTo } from "./getPathTo";
-import type { Snake } from "@snk/types/snake";
-import type { Color, Grid } from "@snk/types/grid";
-import type { Point } from "@snk/types/point";
+import type { Snake } from "@snake/types/snake";
+import type { Color, Grid } from "@snake/types/grid";
+import type { Point } from "@snake/types/point";
 
 type T = Point & { tunnel: Point[]; priority: number };
 

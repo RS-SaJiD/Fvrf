@@ -1,15 +1,15 @@
-import { isInsideLarge, getColor, isInside, isEmpty } from "@snk/types/grid";
-import { around4 } from "@snk/types/point";
+import { isInsideLarge, getColor, isInside, isEmpty } from "@snake/types/grid";
+import { around4 } from "@snake/types/point";
 import {
   getHeadX,
   getHeadY,
   nextSnake,
   snakeEquals,
   snakeWillSelfCollide,
-} from "@snk/types/snake";
+} from "@snake/types/snake";
 import { sortPush } from "./utils/sortPush";
-import type { Snake } from "@snk/types/snake";
-import type { Grid } from "@snk/types/grid";
+import type { Snake } from "@snake/types/snake";
+import type { Grid } from "@snake/types/grid";
 
 type M = { parent: M | null; snake: Snake; w: number; h: number; f: number };
 
