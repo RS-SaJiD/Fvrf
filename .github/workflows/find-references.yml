@@ -1,0 +1,38 @@
+name: Find platane/snk references
+
+on:
+  workflow_dispatch:
+
+jobs:
+  find-references:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Find all platane/snk/v3 references
+        run: |
+          echo "Search results - $(date)" > v.txt
+          echo "==============================" >> v.txt
+          echo "" >> v.txt
+
+          echo "## 'platane' found in:" >> v.txt
+          grep -rn "platane" --include="*.yml" --include="*.yaml" --include="*.ts" --include="*.js" --include="*.json" --include="*.md" --include="*.toml" . >> v.txt 2>/dev/null || echo "None found" >> v.txt
+
+          echo "" >> v.txt
+          echo "## 'snk' found in:" >> v.txt
+          grep -rn "snk" --include="*.yml" --include="*.yaml" --include="*.ts" --include="*.js" --include="*.json" --include="*.md" --include="*.toml" . >> v.txt 2>/dev/null || echo "None found" >> v.txt
+
+          echo "" >> v.txt
+          echo "## 'v3' found in:" >> v.txt
+          grep -rn "v3" --include="*.yml" --include="*.yaml" --include="*.ts" --include="*.js" --include="*.json" --include="*.md" --include="*.toml" . >> v.txt 2>/dev/null || echo "None found" >> v.txt
+
+      - name: Commit v.txt
+        run: |
+          git config --global user.email "bot@RS-SaJiD"
+          git config --global user.name "search bot"
+          git add v.txt
+          git commit -m "🔍 search results"
+          git push
