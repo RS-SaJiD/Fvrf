@@ -1,0 +1,7 @@
+{
+  "name": "@snake/draw",
+  "version": "1.0.0",
+  "dependencies": {
+    "@snake/types": "1.0.0"
+  }
+}
