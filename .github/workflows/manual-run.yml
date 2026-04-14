@@ -11,7 +11,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - uses: RS-SaJiD/snake/svg-only@v3
+      - uses: RS-SaJiD/snake/svg-only@v1 #pltanae's v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
@@ -19,7 +19,7 @@ jobs:
             dist/only-svg/github-contribution-grid-snake-dark.svg?palette=github-dark
             dist/only-svg/github-contribution-grid-snake-blue.svg?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - uses: RS-SaJiD/snake@v3
+      - uses: RS-SaJiD/snake@v1 #pltanae's v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
