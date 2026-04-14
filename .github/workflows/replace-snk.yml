@@ -1,0 +1,28 @@
+name: Replace @snk with @snake
+
+on:
+  workflow_dispatch:
+
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Replace @snk with @snake
+        run: |
+          find . -type f \( -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.md" \) \
+            ! -path "./svg-only/dist/*" \
+            ! -path "./node_modules/*" \
+            -exec sed -i 's/@snk\//@snake\//g' {} +
+
+      - name: Commit changes
+        run: |
+          git config --global user.email "bot@RS-SaJiD"
+          git config --global user.name "replace bot"
+          git add -A
+          git commit -m "🔄 replace @snk with @snake" || echo "Nothing to commit"
+          git push
