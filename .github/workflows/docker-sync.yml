@@ -12,6 +12,8 @@ jobs:
 
       - name: Pull and Push
         run: |
-          docker pull your-username/snake:latest
-          docker tag robinsonsajid/snake:latest robinsonsajid/snake:v1.0.0
-          docker push your-username/snake:v1.0.0
+          docker pull platane/snk:3.5.0
+          
+          docker tag platane/snk:3.5.0 robinsonsajid/snake:1.0.0
+          
+          docker push robinsonsajid/snake:1.0.0
