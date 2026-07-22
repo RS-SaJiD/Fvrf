@@ -1,0 +1,41 @@
+name: Clean Extra Tenders
+
+on:
+  workflow_dispatch: # ম্যানুয়ালি রান করার জন্য
+
+jobs:
+  cleanup-tenders:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Keep only specific tender and clean others
+        run: |
+          TENDER_DIR="site_archive/nctb.cloud/tenders"
+          KEEP_FOLDER="0516a256b18d"
+          
+          if [ -d "$TENDER_DIR" ]; then
+            echo "Cleaning tenders directory..."
+            
+            # লুপ চালিয়ে নির্দিষ্ট ফোল্ডারটি ছাড়া বাকি সব সাব-ফোল্ডার বা ফাইল রিমুভ করা
+            for item in "$TENDER_DIR"/*; do
+              if [ "$(basename "$item")" != "$KEEP_FOLDER" ] && [ "$(basename "$item")" != "index.html" ]; then
+                echo "Removing: $item"
+                rm -rf "$item"
+              fi
+            done
+            
+            echo "Cleanup completed successfully!"
+          else
+            echo "Tenders directory not found!"
+          fi
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Cleaned up extra tender folders, kept only $KEEP_FOLDER" || exit 0
+          git push
+          
